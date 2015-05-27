@@ -1,8 +1,7 @@
 // Require express module and create app.
+var path = require('path');
 var express = require('express');
 var app = express();
-
-// Require mongoose and connect to mongodb.
 var mongoose = require('mongoose');
 var db = mongoose.createConnection('localhost', 'single_resource_rest_api');
 
@@ -12,7 +11,10 @@ db.on('error', function() { throw new Error('Failed to connect to the database.'
 // Handle db connect success.
 db.once('open', function() {    
     
+    app.use(express.static('build'));
+
     // Load bus schema and create model. Get a list of buses and output as JSON.
+    /*
     app.get('/bus', function(req, res) {
         var Bus = require('./models/Bus');
 
@@ -22,17 +24,17 @@ db.once('open', function() {
             res.set('Content-Type', 'application/json')
                 .status(200)
                 .json(data);
-        });
-        
+        });        
     });
+    */
+
+    app.use('/', function(req, res, next) {
+        res.sendFile(__dirname + '/build/index.html');
+    })
 
     // Start server.
     var server = app.listen(3000, 'localhost', function() {
-    console.log(server.address());
-        var host = server.address().address;
-        var port = server.address().port;
-
-        console.log('Application listening at http://%s:%s', host, port);
+        console.log('Application listening at http://%s:%s', server.address().address, server.address().port);
     });
 });
 
