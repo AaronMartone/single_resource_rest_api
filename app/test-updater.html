@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Updater Testing</title>
+        <link rel="stylesheet" href="mocha.css">
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script src="mocha.js"></script>
+        <script>
+            mocha.setup('bdd');
+        </script>
+        <script src="testing-bundle.js"></script>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+</html>
