@@ -44,16 +44,26 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// this file is called by the grunt file's webpack task.
+
+	// require and execute the updater file.
+	var x = __webpack_require__(1);
+	x();
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	function updatePage() {
 	    var p = document.createElement('p');
 	    p.appendChild(document.createTextNode('The most REST-tacular Notes App Known to Mankind'));
-	    document.body.appendChild(p);  
+	    document.body.appendChild(p);
+	    return 'The most REST-tacular Notes App Known to Mankind';
 	}
 
 	module.exports = updatePage;
-	updatePage();
 
 /***/ }
 /******/ ]);

@@ -12,6 +12,7 @@ db.on('error', function() { throw new Error('Failed to connect to the database.'
 db.once('open', function() {    
     
     app.use(express.static('build'));
+    app.use(express.static('tests'));
 
     // Load bus schema and create model. Get a list of buses and output as JSON.
     /*
@@ -29,7 +30,7 @@ db.once('open', function() {
     */
 
     app.use('/', function(req, res, next) {
-        res.sendFile(__dirname + '/build/index.html');
+        res.sendFile(__dirname + '/index.html');
     })
 
     // Start server.
