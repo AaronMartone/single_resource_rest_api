@@ -1,0 +1,38 @@
+{
+  "name": "single_resource_rest_api",
+  "version": "0.1.0",
+  "description": "Single Resource REST API README goes here",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha tests/server-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronMartone/single_resource_rest_api.git"
+  },
+  "author": "Aaron R. Martone <am@aaronmartone.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AaronMartone/single_resource_rest_api/issues"
+  },
+  "homepage": "https://github.com/AaronMartone/single_resource_rest_api#readme",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "express": "^4.12.3",
+    "mongodb": "^2.0.31",
+    "mongoose": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "chai-http": "^1.0.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-mocha": "^0.4.12",
+    "grunt-webpack": "^1.0.8",
+    "mocha": "^2.2.4",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
+  }
+}
